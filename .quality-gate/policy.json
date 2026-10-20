@@ -1,0 +1,11 @@
+{
+  "project": "AI Quality Gate isolated GitHub CI pilot",
+  "original_request": "Validate whether a test command really runs, and avoid claiming real-world completion without evidence.",
+  "requirements": [
+    {
+      "id": "R1",
+      "text": "Actually execute a smoke test command and check its exit code.",
+      "proof": {"type": "command", "argv": ["python", "-c", "print('QUALITY_GATE_SMOKE_OK')"]}
+    }
+  ]
+}
