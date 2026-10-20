@@ -1,0 +1,12 @@
+{
+  "note": "Non-sensitive pilot status metadata. No conversation contents stored.",
+  "goals": {
+    "ORIGINAL_AND_FOLLOWUPS": {"state": "PARTIAL", "evidence": []},
+    "REAL_COMPLETION_PROOF": {"state": "PARTIAL", "evidence": []},
+    "UNSUPPORTED_CONCLUSION_REVERSALS": {"state": "PARTIAL", "evidence": []},
+    "REAL_CHROME_E2E": {"state": "NOT_VERIFIED", "evidence": []},
+    "CHAT_WORK_CODEX_COVERAGE": {"state": "NOT_VERIFIED", "evidence": []},
+    "INDEPENDENT_FACT_CHECK": {"state": "NOT_VERIFIED", "evidence": []},
+    "PRE_DELIVERY_GATING": {"state": "NOT_VERIFIED", "evidence": []}
+  }
+}
