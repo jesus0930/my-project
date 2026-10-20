@@ -1,0 +1,29 @@
+name: Quality Gate Pilot
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  quality-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check evaluator and regression cases
+        run: python -m unittest discover -s tests -v
+      - name: Execute approved smoke test and evaluate claims
+        run: python quality_gate.py --root . --report quality_gate_report.json
+      - name: Attach evidence report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-gate-pilot-report
+          path: quality_gate_report.json
+          if-no-files-found: warn
